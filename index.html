@@ -8,101 +8,105 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #004080;
-      --secondary: #007bff;
-      --light-bg: #f7f7f7;
-      --white: #fff;
-      --dark-text: #333;
-      --gray-text: #555;
-    }
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Assistant', sans-serif;
-      background-color: var(--light-bg);
+      background-color: #f7f7f7;
       margin: 0;
       padding: 0;
       direction: rtl;
       text-align: center;
-      line-height: 1.6;
     }
     .container {
       max-width: 800px;
       margin: 30px auto;
-      background-color: var(--white);
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       overflow: hidden;
     }
     .header {
-      background: linear-gradient(45deg, var(--primary), #00509e);
-      color: var(--white);
-      padding: 30px 20px;
+      background-color: #004080;
+      color: #fff;
+      padding: 20px;
     }
     .header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2em;
     }
     .image-container img {
       width: 100%;
       height: auto;
-      display: block;
     }
     .content {
-      padding: 30px 20px;
-      text-align: right;
+      padding: 20px;
     }
     .content h2 {
-      color: var(--primary);
+      color: #004080;
       margin-top: 0;
-      margin-bottom: 20px;
-      font-size: 1.8em;
-    }
-    .content p {
-      color: var(--dark-text);
-      margin-bottom: 20px;
-      font-size: 1em;
     }
     .btn {
       display: inline-block;
       padding: 15px 30px;
-      background-color: var(--secondary);
-      color: var(--white);
+      background-color: #007bff;
+      color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 1.1em;
-      transition: background-color 0.3s ease, transform 0.2s;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
       margin-top: 20px;
     }
     .btn:hover {
       background-color: #0056b3;
-      transform: translateY(-2px);
     }
-    #click-counter {
-      margin-top: 10px;
-      font-weight: 600;
-      color: var(--primary);
+    .instructions {
+      text-align: left;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .instructions h3 {
+      color: #333;
+      margin-top: 0;
+    }
+    .instructions ol {
+      padding-right: 20px;
+    }
+    .instructions li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .warning {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: left;
+      color: #856404;
+    }
+    .contact {
+      margin-top: 30px;
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+    }
+    .contact h3 {
+      margin: 10px 0;
+      color: #333;
+    }
+    .contact p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.9em;
     }
     footer {
       margin-top: 20px;
-      padding: 15px 10px;
-      background: linear-gradient(45deg, var(--primary), #00509e);
-      color: var(--white);
-      font-size: 0.9em;
-    }
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 2em;
-      }
-      .content h2 {
-        font-size: 1.5em;
-      }
-      .btn {
-        font-size: 1em;
-        padding: 12px 25px;
-      }
+      padding: 10px;
+      background-color: #004080;
+      color: #fff;
+      font-size: 0.8em;
     }
   </style>
 </head>
@@ -113,21 +117,49 @@
     </div>
     <div class="image-container">
       <!-- החלף את כתובת התמונה בכתובת המדויקת מהאתר של ALFA LAVAL -->
-      <img src="https://www.alfalaval.com/globalassets/images/products/separation/centrifugal-separators/decanters/alfa-laval-decanter-centrifuge.png" alt="דיקנטר של אלפא לבאל">
+      <img src="https://via.placeholder.com/800x400?text=ALFA+LAVAL+Decanter" alt="דיקנטר של אלפא לבאל">
     </div>
     <div class="content">
       <h2>הסבר שימוש לאפליקציה</h2>
       <p>
         אפליקציה זו נועדה להדריך את השימוש בדיקנטרים של חברת אלפא לבאל.
+        <br>על מנת להתחיל, לחצו על הכפתור מטה.
         <br>המדריך יספק לכם הסברים מפורטים על הפעלת הצנטריפוגות, תחזוקה ובדיקות בטיחות.
         <br>אנא קראו בעיון את ההוראות לעבודה תקינה ובטוחה.
-        <br>בכל שאלה יש לפנות לצוות השירות בטלפון: גיא 0502070062.
       </p>
-      <!-- כפתור לפתיחת המדריך -->
       <a href="https://chatgpt.com/g/g-Ez2H8qKjt-decanter-user-guide-hebrew" target="_blank" class="btn">פתח את המדריך</a>
       
-      <!-- כאן תוצג ספירת הלחיצות -->
-      <div id="click-counter"></div>
+      <div class="instructions">
+        <h3>הוראות שימוש והתחברות עם חשבון OPENAI</h3>
+        <ol>
+          <li>
+            <strong>לחיצה על הקישור:</strong> לחצו על הכפתור "פתח את המדריך" כדי לעבור לדף ההוראות.
+          </li>
+          <li>
+            <strong>התחברות:</strong> בדף ההוראות, תתבקשו להתחבר באמצעות חשבון ה-OPENAI שלכם. הזינו את פרטי הכניסה שלכם או הירשמו אם אין לכם חשבון.
+          </li>
+          <li>
+            <strong>עיון במידע:</strong> לאחר ההתחברות, עיינו במידע ובכל ההנחיות המופיעים. הקפידו לקרוא ולהבין כל שלב.
+          </li>
+          <li>
+            <strong>שימוש בפיילוט:</strong> יש לזכור כי המידע המוצג הוא בגדר פילוט ונועד לשימוש ניסיוני בלבד.
+          </li>
+          <li>
+            <strong>פנייה לצוות שירות:</strong> במידה וקיימים ספקות או שאלות, מומלץ להתעייץ עם צוות השירות לקבלת הסברים והנחיות נוספות.
+          </li>
+        </ol>
+      </div>
+      
+      <div class="warning">
+        <strong>אזהרה:</strong> המידע וההנחיות הניתנים הם חלק מתוכנה בפיילוט. יש לבחון את המידע בקפידה לפני השימוש. בכל מקרה של ספק, פנו לצוות השירות.
+      </div>
+      
+      <div class="contact">
+        <h3>פרטי יצירת קשר - פי סי חץ</h3>
+        <p>כתובת: רחוב הדוגמא 123, תל אביב</p>
+        <p>טלפון: 03-1234567</p>
+        <p>אתר: <a href="http://www.pc-hatz.co.il" target="_blank">www.pc-hatz.co.il</a></p>
+      </div>
     </div>
   </div>
   <footer>
@@ -138,8 +170,18 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.querySelector('.btn');
-      const counterDisplay = document.getElementById('click-counter');
-
+      
+      // אם אין אלמנט להצגת הספירה, נוצר אחד ונוסף אחרי הכפתור
+      let counterDisplay = document.getElementById('click-counter');
+      if (!counterDisplay) {
+        counterDisplay = document.createElement('div');
+        counterDisplay.id = 'click-counter';
+        counterDisplay.style.marginTop = '10px';
+        counterDisplay.style.fontWeight = '600';
+        counterDisplay.style.color = '#004080';
+        btn.parentNode.insertBefore(counterDisplay, btn.nextSibling);
+      }
+  
       // פונקציה לעדכון הספירה דרך CountAPI
       function updateCounter() {
         // שימוש ב-namespace "dec-xi.vercel.app" וב-key "visits"
@@ -153,10 +195,10 @@
             counterDisplay.innerText = 'לא ניתן לעדכן את הספירה';
           });
       }
-
-      // עדכון הספירה עם טעינת הדף
+  
+      // עדכון הספירה בעת טעינת הדף
       updateCounter();
-
+  
       // עדכון הספירה בכל לחיצה על הכפתור
       btn.addEventListener('click', updateCounter);
     });
