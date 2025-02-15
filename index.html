@@ -178,8 +178,8 @@
   
       // פונקציה לעדכון הספירה דרך CountAPI
       function updateCounter() {
-        // שימוש ב-namespace "decxi-vercel-app" וב-key "visits"
-        fetch('https://api.countapi.xyz/hit/decxi-vercel-app/visits')
+        // שימוש ב-namespace "dec-xi-vercel-app" וב-key "visits"
+        fetch('https://api.countapi.xyz/hit/dec-xi-vercel-app/visits')
           .then(response => response.json())
           .then(data => {
             counterDisplay.innerText = 'מספר כניסות: ' + data.value;
