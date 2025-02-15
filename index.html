@@ -80,54 +80,10 @@
       background-color: #0056b3;
       transform: translateY(-2px);
     }
-    .instructions {
-      text-align: right;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 20px;
-      margin-top: 30px;
-    }
-    .instructions h3 {
-      color: var(--dark-text);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.4em;
-    }
-    .instructions ol {
-      padding-right: 20px;
-      margin: 0;
-    }
-    .instructions li {
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .warning {
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 30px;
-      text-align: right;
-      color: #856404;
-      font-size: 0.95em;
-    }
-    .contact {
-      margin-top: 30px;
-      background-color: #f0f0f0;
-      padding: 20px;
-      border-top: 1px solid #ddd;
-      text-align: right;
-    }
-    .contact h3 {
-      margin: 0 0 10px;
-      color: var(--dark-text);
-      font-size: 1.3em;
-    }
-    .contact p {
-      margin: 5px 0;
-      color: var(--gray-text);
-      font-size: 0.95em;
+    #click-counter {
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--primary);
     }
     footer {
       margin-top: 20px;
@@ -165,45 +121,45 @@
         אפליקציה זו נועדה להדריך את השימוש בדיקנטרים של חברת אלפא לבאל.
         <br>המדריך יספק לכם הסברים מפורטים על הפעלת הצנטריפוגות, תחזוקה ובדיקות בטיחות.
         <br>אנא קראו בעיון את ההוראות לעבודה תקינה ובטוחה.
-        <br>בכל שאלה יש לפנות לצוות השירות בטלפון:
-        <br>גיא 0502070062.
+        <br>בכל שאלה יש לפנות לצוות השירות בטלפון: גיא 0502070062.
       </p>
+      <!-- כפתור לפתיחת המדריך -->
       <a href="https://chatgpt.com/g/g-Ez2H8qKjt-decanter-user-guide-hebrew" target="_blank" class="btn">פתח את המדריך</a>
       
-      <div class="instructions">
-        <h3>הוראות שימוש והתחברות עם חשבון OPENAI</h3>
-        <ol>
-          <li>
-            <strong>לחיצה על הקישור:</strong> לחצו על הכפתור "פתח את המדריך" כדי לעבור לדף ההוראות.
-          </li>
-          <li>
-            <strong>התחברות:</strong> בדף ההוראות, תתבקשו להתחבר באמצעות חשבון ה-OPENAI שלכם. הזינו את פרטי הכניסה שלכם או הירשמו אם אין לכם חשבון.
-          </li>
-          <li>
-            <strong>עיון במידע:</strong> לאחר ההתחברות, עיינו במידע ובכל ההנחיות המופיעים. הקפידו לקרוא ולהבין כל שלב.
-          </li>
-          <li>
-            <strong>שימוש בפיילוט:</strong> יש לזכור כי המידע המוצג הוא בגדר פילוט ונועד לשימוש ניסיוני בלבד.
-          </li>
-          <li>
-            <strong>פנייה לצוות שירות:</strong> במידה וקיימים ספקות או שאלות, מומלץ להתעייץ עם צוות השירות לקבלת הסברים והנחיות נוספות.
-          </li>
-        </ol>
-      </div>
-      
-      <div class="warning">
-        <strong>אזהרה:</strong> המידע וההנחיות הניתנים הם חלק מתוכנה בפיילוט. יש לבחון את המידע בקפידה לפני השימוש. בכל מקרה של ספק, פנו לצוות השירות.
-      </div>
-      
-      <div class="contact">
-        <h3>פרטי יצירת קשר - פי סי חץ</h3>
-        <p>כתובת: רחוב הסדן 7, חולון</p>
-        <p>אתר: <a href="https://pchetz-tech.com/" target="_blank">https://pchetz-tech.com/</a></p>
-      </div>
+      <!-- כאן תוצג ספירת הלחיצות -->
+      <div id="click-counter"></div>
     </div>
   </div>
   <footer>
     &copy; 2025 פי סי חץ. כל הזכויות שמורות.
   </footer>
+  
+  <!-- קטע קוד לעדכון וספירת הלחיצות באמצעות CountAPI -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.querySelector('.btn');
+      const counterDisplay = document.getElementById('click-counter');
+
+      // פונקציה לעדכון הספירה דרך CountAPI
+      function updateCounter() {
+        // שימוש ב-namespace "dec-xi.vercel.app" וב-key "visits"
+        fetch('https://api.countapi.xyz/hit/dec-xi.vercel.app/visits')
+          .then(response => response.json())
+          .then(data => {
+            counterDisplay.innerText = 'מספר כניסות: ' + data.value;
+          })
+          .catch(error => {
+            console.error('Error updating counter:', error);
+            counterDisplay.innerText = 'לא ניתן לעדכן את הספירה';
+          });
+      }
+
+      // עדכון הספירה עם טעינת הדף
+      updateCounter();
+
+      // עדכון הספירה בכל לחיצה על הכפתור
+      btn.addEventListener('click', updateCounter);
+    });
+  </script>
 </body>
 </html>
